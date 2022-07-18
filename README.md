@@ -249,11 +249,11 @@ sudo lnxrouter -i vboxnet5 --tp 9040 --dns 9053
 
 Create a bridge
 
-```
+```sh
 sudo brctl addbr firejail5
 ```
 
-```
+```sh
 sudo lnxrouter -i firejail5 -g 192.168.55.1 --tp 9040 --dns 9053 
 firejail --net=firejail5 --dns=192.168.55.1 --blacklist=/var/run/nscd
 ```
@@ -268,7 +268,7 @@ nscd is domain name cache service, which shouldn't be accessed from in jail here
 
 <details>
 
-```
+```sh
 Usage: lnxrouter <options>
 
 Options:
@@ -278,7 +278,7 @@ Options:
     -i <interface>          Interface to make NATed sub-network,
                             and to provide Internet to
                             (To create WiFi hotspot use '--ap' instead)
-    -o <interface>          Specify an inteface to provide Internet from.
+    -o <interface>          Specify an interface to provide Internet from.
                             (See Notice 1)
                             (Note using this with default DNS option may leak
                             queries to other interfaces)
